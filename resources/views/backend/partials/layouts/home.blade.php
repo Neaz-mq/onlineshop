@@ -1,5 +1,7 @@
 @extends('backend.master')
 
 @section('content')
-<h1>My home</h1>
+<h1>{{$title}}</h1>
+<h4>{{$house}}</h4>
+
 @endsection
