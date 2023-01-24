@@ -1,9 +1,14 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\OrderController;
+use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\CustomerController;
+use App\Http\Controllers\Backend\ReportController;
 use Illuminate\Support\Facades\Route;
 
-/*
+/*cle
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -28,6 +33,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[HomeController::class, 'home']);
 Route::get('/contact',[HomeController::class, 'contact']);
+Route::get('/categories',[CategoryController::class, 'list'])->name('category.list');
+Route::get('/orders',[OrderController::class, 'item'])->name('order.item');
+Route::get('/products',[ProductController::class, 'show'])->name('product.show');
+Route::get('/customers',[CustomerController::class, 'person'])->name('customer.list');
+Route::get('/reports',[ReportController::class, 'show'])->name('report.list');
 
 
 //url,controller,method
