@@ -13,4 +13,11 @@ class CategoryController extends Controller
 
         return view ('backend.partials.layouts.category.list');
     }
+
+    public function create()
+    {
+        // dd("category");
+
+        return view ('backend.partials.layouts.category.create');
+    }
 }

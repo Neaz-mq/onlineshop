@@ -33,7 +33,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[HomeController::class, 'home']);
 Route::get('/contact',[HomeController::class, 'contact']);
+
+
+
 Route::get('/categories',[CategoryController::class, 'list'])->name('category.list');
+Route::get('/category/create',[CategoryController::class, 'create'])->name('category.create');
+
+
+
+
 Route::get('/orders',[OrderController::class, 'item'])->name('order.item');
 Route::get('/products',[ProductController::class, 'show'])->name('product.show');
 Route::get('/customers',[CustomerController::class, 'person'])->name('customer.list');
