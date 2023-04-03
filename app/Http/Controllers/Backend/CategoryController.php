@@ -11,8 +11,11 @@ class CategoryController extends Controller
     public function list()
     {
         // dd("category");
-
-        return view ('backend.partials.layouts.category.list');
+        // get all data from category
+        // DML-  select * from categories;
+        $categories=Category::all(); //get();
+        //dd($categories);
+        return view ('backend.partials.layouts.category.list',compact('categories'));
     }
 
     public function create()
