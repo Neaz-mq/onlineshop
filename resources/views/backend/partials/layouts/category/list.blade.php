@@ -16,14 +16,16 @@
     </tr>
   </thead>
   <tbody>
-    
+    @foreach($categories as $category)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{$category->id}}</th>
+      <td>{{$category->name}}</td>
+      <td>{{$category->status}}</td>
+      <td>
+        <a href="" class="btn btn-success">view</a>
+      </td>
     </tr>
-    
+    @endforeach
   </tbody>
 </table>
 
