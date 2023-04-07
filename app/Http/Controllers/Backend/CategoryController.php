@@ -38,6 +38,6 @@ class CategoryController extends Controller
 
          ]);
 
-         return redirect()->back();
+         return redirect()->route('category.list');
     }
 }

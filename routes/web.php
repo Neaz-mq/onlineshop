@@ -41,10 +41,12 @@ Route::get('/category/create',[CategoryController::class, 'create'])->name('cate
 Route::post('/category/store',[CategoryController::class, 'store'])->name('category.store');
 
 
+Route::get('/products',[ProductController::class, 'show'])->name('product.show');
+Route::post('/products/store',[ProductController::class, 'store'])->name('product.store');
 
 
 Route::get('/orders',[OrderController::class, 'item'])->name('order.item');
-Route::get('/products',[ProductController::class, 'show'])->name('product.show');
+
 Route::get('/customers',[CustomerController::class, 'person'])->name('customer.list');
 Route::get('/reports',[ReportController::class, 'show'])->name('report.list');
 
