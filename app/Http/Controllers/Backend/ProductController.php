@@ -13,7 +13,10 @@ class ProductController extends Controller
     {
         // dd("show");
 
-        $products=Product::paginate(3);
+        //eager load
+        //lazy load
+
+        $products=Product::with('category')->paginate(3);
         $categories=Category::all();
         //dd($products);
         return view('backend.partials.layouts.product.show',compact('products','categories'));
