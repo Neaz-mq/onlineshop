@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Category;
 
 class ProductController extends Controller
 {
@@ -12,9 +13,10 @@ class ProductController extends Controller
     {
         // dd("show");
 
-        $products=Product::all();
+        $products=Product::paginate(3);
+        $categories=Category::all();
         //dd($products);
-        return view('backend.partials.layouts.product.show',compact('products'));
+        return view('backend.partials.layouts.product.show',compact('products','categories'));
 
     }
 
@@ -23,7 +25,7 @@ class ProductController extends Controller
 //dd($request->all());
      Product::create([
 
-       'category_id'=>1,
+       'category_id'=>$request->category_id,
        'name'=>$request->product_name,
        'price'=>$request->product_price,
        'details'=>$request->description

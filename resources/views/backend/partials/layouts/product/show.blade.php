@@ -14,6 +14,7 @@ Create Product
     <tr>
       <th scope="col">#</th>
       <th scope="col">Product Name</th>
+      <th scope="col">Category Name</th>
       <th scope="col">price</th>
       <th scope="col">Status</th>
       <th scope="col">Action</th>
@@ -24,7 +25,10 @@ Create Product
     <tr>
       <th scope="row">{{$product->id}}</th>
       <td>{{$product->name}}</td>
+      <td>{{$product->category_id}}</td>
       <td>{{$product->price}} .BDT</td>
+      
+     
       <td>{{$product->status}}</td>
       <td>
         <a href="" class="btn btn-success">View</a>
@@ -33,7 +37,9 @@ Create Product
     @endforeach
   </tbody>
 </table>
-
+<div class="row">
+  {{$products->links()}}
+</div>
 
 
 <!-- Modal -->
@@ -52,6 +58,17 @@ Create Product
       <div class="modal-body">
       <form action="{{route('product.store')}}" method="post">
         @csrf
+
+        <div class="form-group">
+    <label for="product_name">Select Category</label>
+   <select class="form-control" name="category_id" id="">
+    @foreach($categories as $cat)
+    <option value="{{$cat->id}}">{{$cat->name}}</option>
+    @endforeach
+    
+   </select>
+  </div>
+
   <div class="form-group">
     <label for="product_name">Name</label>
     <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Enter product name">
