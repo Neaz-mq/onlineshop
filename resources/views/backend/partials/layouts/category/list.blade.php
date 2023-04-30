@@ -22,7 +22,7 @@
       <td>{{$category->name}}</td>
       <td>{{$category->status}}</td>
       <td>
-        <a href="{{route('category.product', $category->id )}}" class="btn btn-success">view</a>
+        <a href="{{route('category.product', $category->id)}}" class="btn btn-success">view</a>
       </td>
     </tr>
     @endforeach
